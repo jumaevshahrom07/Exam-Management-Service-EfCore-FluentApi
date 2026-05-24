@@ -54,14 +54,22 @@ public class SaleService : ISaleService
                 _logger.LogWarning("Quantity sold must be greater than 0");
                 return 0;
             }
+            
+            var product = await _context.Products.FirstOrDefaultAsync(p => p.Id == dto.ProductId);
 
-            var productExists = await _context.Products.AnyAsync(p => p.Id == dto.ProductId);
-
-            if (!productExists)
+            if (product == null)
             {
                 _logger.LogWarning("Product not found");
                 return 0;
             }
+
+            if (product.QuantityInStock < dto.QuantitySold)
+            {
+                _logger.LogWarning("Not enough products in stock");
+                return 0;
+            }
+
+            product.QuantityInStock -= dto.QuantitySold;
 
             var sale = new Sale
             {
@@ -157,7 +165,7 @@ public class SaleService : ISaleService
             return 1;
         }
 
-        catch(Exception ex)
+        catch (Exception ex)
         {
             _logger.LogError(ex, "Error while deleting sale");
             return 0;

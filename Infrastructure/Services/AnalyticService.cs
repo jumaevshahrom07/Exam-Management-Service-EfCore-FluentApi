@@ -71,18 +71,17 @@ public class AnalyticService : IAnalyticService
         return await _context.Sales.GroupBy(s => s.Product.Name)
             .Select(g => new TopProductsDto
             {
-                ProductName = g.First().Product.Name,
+                ProductName = g.Key,
                 TotalSold = g.Sum(x => x.QuantitySold)
             }).OrderByDescending(x => x.TotalSold).Take(5).ToListAsync();
     }
 
     public async Task<List<DailyRevenueDto>> GetDailyRevenueAsync()
     {
-        return await _context.Sales
-            .GroupBy(s => s.SaleDate.Date)
+        return await _context.Sales.GroupBy(s => s.SaleDate.Date)
             .Select(g => new DailyRevenueDto
             {
-                Date = g.First().SaleDate.Date,
+                Date = g.Key,
                 Revenue = g.Sum(x => x.QuantitySold * x.Product.Price)
             }).ToListAsync();
     }

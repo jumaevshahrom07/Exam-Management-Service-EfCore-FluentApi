@@ -136,3 +136,4 @@ C:\Users\shahr\OneDrive\Desktop\Exam-EfCore-FluentApi-Inventory-Management-Syste
 C:\Users\shahr\OneDrive\Desktop\Exam-EfCore-FluentApi-Inventory-Management-System\WebApi\obj\Debug\net10.0\WebApi.pdb
 C:\Users\shahr\OneDrive\Desktop\Exam-EfCore-FluentApi-Inventory-Management-System\WebApi\obj\Debug\net10.0\WebApi.genruntimeconfig.cache
 C:\Users\shahr\OneDrive\Desktop\Exam-EfCore-FluentApi-Inventory-Management-System\WebApi\obj\Debug\net10.0\ref\WebApi.dll
+C:\Users\shahr\OneDrive\Desktop\Exam-EfCore-FluentApi-Inventory-Management-System\WebApi\obj\Debug\net10.0\WebApi.sourcelink.json

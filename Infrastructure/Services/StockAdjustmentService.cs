@@ -68,11 +68,19 @@ public class StockAdjustmentService : IStockAdjustmentService
                 return 0;
             }
 
-            var productExists = await _context.Products.AnyAsync(p => p.Id == dto.ProductId);
+            var product = await _context.Products.FirstOrDefaultAsync(p => p.Id == dto.ProductId);
 
-            if (!productExists)
+            if (product == null)
             {
                 _logger.LogWarning("Product not found");
+                return 0;
+            }
+
+            product.QuantityInStock += dto.AdjustmentAmount;
+
+            if (product.QuantityInStock < 0)
+            {
+                _logger.LogWarning("Stock cannot be negative");
                 return 0;
             }
 

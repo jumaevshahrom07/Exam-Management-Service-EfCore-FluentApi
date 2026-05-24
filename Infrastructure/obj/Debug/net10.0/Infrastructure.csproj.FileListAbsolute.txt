@@ -15,3 +15,4 @@ C:\Users\shahr\OneDrive\Desktop\Exam-EfCore-FluentApi-Inventory-Management-Syste
 C:\Users\shahr\OneDrive\Desktop\Exam-EfCore-FluentApi-Inventory-Management-System\Infrastructure\obj\Debug\net10.0\Infrastructure.pdb
 C:\Users\shahr\OneDrive\Desktop\Exam-EfCore-FluentApi-Inventory-Management-System\Infrastructure\obj\Debug\net10.0\Infrastructure.genruntimeconfig.cache
 C:\Users\shahr\OneDrive\Desktop\Exam-EfCore-FluentApi-Inventory-Management-System\Infrastructure\obj\Debug\net10.0\ref\Infrastructure.dll
+C:\Users\shahr\OneDrive\Desktop\Exam-EfCore-FluentApi-Inventory-Management-System\Infrastructure\obj\Debug\net10.0\Infrastructure.sourcelink.json
